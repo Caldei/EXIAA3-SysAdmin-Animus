@@ -1,6 +1,6 @@
 ---
     - name: Install aptitude using apt
-    apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
+      apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
 
     - name: Install required system packages
       apt: name={{ item }} state=latest update_cache=yes
@@ -24,9 +24,9 @@
         name: docker
     
     - name: Copy file with owner and permissions
-    copy:
-      src: /etc/ansible/Dockerfiles/vitrine-apache/Dockerfile
-      dest: /root/vitrine-apache/Dockerfile
-      owner: root
-      group: root
-      mode: '0644'
+      copy:
+        src: /etc/ansible/EXIAA3-SysAdmin-Animus/Dockerfiles/vitrine-apache/Dockerfile
+        dest: /root/vitrine-apache/Dockerfile
+        owner: root
+        group: root
+        mode: '0644'
