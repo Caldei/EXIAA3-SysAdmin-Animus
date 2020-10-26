@@ -1,8 +1,5 @@
 ---
-    - name: Build Image
-      hosts: SRV1
-      tasks:
-        - name: Build vitrine Docker Image
-        docker_image:
-          path: /etc/ansible/Docker/vitrine-apache/Dockerfile
-          name: vitrine-apache
+      - name: Build vitrine Docker Image
+      docker_image:
+        path: /root/vitrine-apache
+        name: vitrine-apache

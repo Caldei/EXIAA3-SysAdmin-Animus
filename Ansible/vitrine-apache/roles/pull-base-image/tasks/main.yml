@@ -1,7 +1,5 @@
 ---
-    - name: Pull Base Image
-      hosts: SRV1
-      tasks:
-        - name: Pull ubuntu Image
-          docker_image:
-            name: ubuntu
+      - name: Pull ubuntu Image
+        docker_image:
+          name: ubuntu
+          source: pull

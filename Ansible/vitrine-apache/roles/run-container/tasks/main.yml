@@ -1,13 +1,10 @@
 ---
-    - name: Deploy Container from Image
-      hosts: SRV1
-      tasks:
-        - name: Deploy Container From vitrine-apache Image 
-        docker_container:
-          name: vitrine
-          image: vitrine-apache 
-          state: started
-          ports:
-          - “80:80”
-          tty: true
-          detached: true
+      - name: Deploy Container From vitrine-apache Image 
+      docker_container:
+        name: vitrine
+        image: vitrine-apache 
+        state: started
+        ports:
+        - “80:80”
+        tty: true
+        detached: true

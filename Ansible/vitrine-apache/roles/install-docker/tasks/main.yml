@@ -1,22 +1,32 @@
 ---
-    - name: Update, Install Docker and copy Dockerfile
-      hosts: SRV1
-      tasks:
-        - name: Install Docker with update if it has to
-          apt:
-            name: docker
-            state: latest
-            update_case= yes
+    - name: Install aptitude using apt
+    apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
 
-        - name: Install Docker
-            apt:
-              name: docker.io
-              state: latest
-        
-        - name: Copy file with owner and permissions
-        copy:
-          src: /etc/ansible/Docker/vitrine-apache/Dockerfile
-          dest: /Dockerfile
-          owner: root
-          group: root
-          mode: '0644'
+    - name: Install required system packages
+      apt: name={{ item }} state=latest update_cache=yes
+      loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'python3-pip', 'virtualenv', 'python3-setuptools']
+
+    - name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu bionic stable
+        state: present
+
+    - name: Update apt and install docker-ce
+      apt: update_cache=yes name=docker-ce state=latest
+
+    - name: Install Docker Module for Python
+      pip:
+        name: docker
+    
+    - name: Copy file with owner and permissions
+    copy:
+      src: /etc/ansible/Dockerfiles/vitrine-apache/Dockerfile
+      dest: /root/vitrine-apache/Dockerfile
+      owner: root
+      group: root
+      mode: '0644'
