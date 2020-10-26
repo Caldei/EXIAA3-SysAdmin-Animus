@@ -1,0 +1,22 @@
+---
+    - name: Update, Install Docker and copy Dockerfile
+      hosts: SRV1
+      tasks:
+        - name: Install Docker with update if it has to
+          apt:
+            name: docker
+            state: latest
+            update_case= yes
+
+        - name: Install Docker
+            apt:
+              name: docker.io
+              state: latest
+        
+        - name: Copy file with owner and permissions
+        copy:
+          src: /etc/ansible/Docker/vitrine-apache/Dockerfile
+          dest: /Dockerfile
+          owner: root
+          group: root
+          mode: '0644'
