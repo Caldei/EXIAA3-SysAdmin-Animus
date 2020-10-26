@@ -1,3 +1,16 @@
 ---
+    - name: Create directory
+    file:
+      path: /root/vitrine-apache
+      state: directory    
+
+    - name: Copy Dockerfile
+        copy:
+          src: /etc/ansible/EXIAA3-SysAdmin-Animus/Dockerfiles/vitrine-apache/Dockerfile
+          dest: /root/vitrine-apache/Dockerfile
+          owner: root
+          group: root
+          mode: '0644'
+
       - name: Build vitrine Docker Image
         command: docker build -t vitrine-apache /root/vitrine-apache
