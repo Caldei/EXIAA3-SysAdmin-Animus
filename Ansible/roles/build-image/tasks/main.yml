@@ -3,7 +3,7 @@
       file:
         path: /root/{{ item }}
         state: directory
-        loop: [ 'vitrine-apache', 'intranet-nginx']
+      loop: [ 'vitrine-apache', 'intranet-nginx']
 
     - name: Copy Dockerfile
       copy:
@@ -12,7 +12,7 @@
         owner: root
         group: root
         mode: '0644'
-        loop: [ 'vitrine-apache', 'intranet-nginx']
+      loop: [ 'vitrine-apache', 'intranet-nginx']
 
     - name: Build vitrine Docker Image
       command: docker build -t {{ item }} /root/{{ item }}/
