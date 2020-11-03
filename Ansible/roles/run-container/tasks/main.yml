@@ -1,0 +1,11 @@
+---
+    - name: Deploy Containers From Images 
+      docker_container:
+        name: {{ item }}
+        image: {{ item }}
+        state: started
+        ports:
+        - “80:80”
+        tty: true
+        detached: true
+        loop: [ 'vitrine-apache', 'intranet-nginx']

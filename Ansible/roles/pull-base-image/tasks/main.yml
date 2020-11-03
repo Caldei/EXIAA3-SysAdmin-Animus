@@ -1,0 +1,5 @@
+---
+      - name: Pull debian Image
+        docker_image:
+          name: debian
+          source: pull

@@ -1,5 +1,5 @@
 ---
-    - name: Install apache
+    - name: Install Animus's web servers
       hosts: SRV1
       remote_user: root
       # remote_user: user

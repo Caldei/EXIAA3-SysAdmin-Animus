@@ -1,0 +1,19 @@
+---
+    - name: Create directory
+      file:
+        path: /root/{{ item }}
+        state: directory
+        loop: [ 'vitrine-apache', 'intranet-nginx']
+
+    - name: Copy Dockerfile
+      copy:
+        src: /etc/ansible/EXIAA3-SysAdmin-Animus/Dockerfiles/{{ item }}/
+        dest: /root/vitrine-apache/
+        owner: root
+        group: root
+        mode: '0644'
+        loop: [ 'vitrine-apache', 'intranet-nginx']
+
+    - name: Build vitrine Docker Image
+      command: docker build -t {{ item }} /root/{{ item }}/
+      loop: [ 'vitrine-apache', 'intranet-nginx']
