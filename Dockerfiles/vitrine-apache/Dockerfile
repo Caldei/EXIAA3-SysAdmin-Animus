@@ -4,7 +4,7 @@ RUN apt update -y -q
 RUN apt upgrade -y -q
 RUN apt install apache2 -y
 
-COPY www/nanoindex.html /var/www/html
+COPY www/index.html /var/www/html
 
 EXPOSE 80
 

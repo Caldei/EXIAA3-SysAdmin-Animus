@@ -1,20 +1,22 @@
 ---
-    - name: Deploy Containers From Images 
+    - name: Deploy vitrine-apache 
       docker_container:
         name: vitrine-apache
         image: vitrine-apache
+        container_default_behavior: no_defaults
         state: started
         ports:
-        - “80:80”
+        - "80:80"
         tty: true
-        detached: true
+        detach: true
 
-      - name: Deploy Containers From Images 
+    - name: Deploy intranet-nginx 
       docker_container:
-        name: intranet-apache
-        image: intranet-apache
+        name: intranet-nginx
+        image: intranet-nginx
+        container_default_behavior: no_defaults
         state: started
         ports:
-        - “80:8080”
+        - "8080:80"
         tty: true
-        detached: true
+        detach: true
