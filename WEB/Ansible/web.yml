@@ -1,6 +1,6 @@
 ---
     - name: Install Animus's web servers
-      hosts: SRV1
+      hosts: WEB
       remote_user: root
       # remote_user: user
       # become: yes

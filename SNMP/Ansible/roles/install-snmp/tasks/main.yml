@@ -1,0 +1,4 @@
+---
+  - name: Install SNMP packages
+    apt: name={{ item }} state=latest update_cache=yes
+    loop: [ 'snmp', 'snmpd']

@@ -1,0 +1,8 @@
+---
+    - name: Copy SNMP Conf File
+      copy:
+        src: /etc/ansible/EXIAA3-SysAdmin-Animus/SNMP/Conf/snmpd.conf
+        dest: /etc/snmp/snmpd.conf
+        owner: root
+        group: root
+        mode: '0644'
