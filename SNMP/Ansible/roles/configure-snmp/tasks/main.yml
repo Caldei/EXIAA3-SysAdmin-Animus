@@ -7,3 +7,6 @@
         group: root
         mode: '0644'
       notify: restart snmpd
+
+     - name: restart snmpd
+      service: name=snmpd state=restarted
