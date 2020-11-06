@@ -16,7 +16,7 @@ Ce repo fait partie du projet Animus Extendus. Il contient :
 * Sur le Serveur Ansible se placer dans le dossier d'Ansible (```cd /etc/ansible```).
 * Ajouter ```[WEB]``` suivit de l'IP du Serveur de Déploiment dans le fichier ```hosts``` présent dans ce dossier.
 * Cloner ce repo dans le dossier (```git clone https://github.com/Caldei/EXIAA3-SysAdmin-Animus.git```).
-* Lancer le Playbook (```ansible-playbook EXIAA3-SysAdmin-Animus/Ansible/WEB/web.yml```).
+* Lancer le Playbook (```ansible-playbook EXIAA3-SysAdmin-Animus/WEB/Ansible/web.yml```).
 * Enjoy :)
 
 

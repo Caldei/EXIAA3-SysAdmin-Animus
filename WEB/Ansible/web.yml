@@ -8,6 +8,7 @@
     
       roles:
         - install-docker
+        - configure-docker
         - pull-base-image
         - build-image
         - run-container

@@ -1,0 +1,14 @@
+---
+    - name: Copy Docker Daemon Config File
+      copy:
+        src: /etc/ansible/EXIAA3-SysAdmin-Animus/WEB/roles/configure-docker/files/docker.service
+        dest: /lib/systemd/system/docker.service
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Daemon Reload
+      command: systemctl daemon-reload
+
+    - name: restart docker
+      service: name=docker state=restarted
