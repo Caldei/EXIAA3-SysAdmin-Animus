@@ -1,12 +1,12 @@
 ---
     - name: Copy SNMP Config File
       copy:
-        src: /etc/ansible/EXIAA3-SysAdmin-Animus/SNMP/roles/configure-snmp/files/snmpd.conf
+        src: /etc/ansible/EXIAA3-SysAdmin-Animus/SNMP/Ansible/roles/configure-snmp/files/snmpd.conf
         dest: /etc/snmp/snmpd.conf
         owner: root
         group: root
         mode: '0644'
       notify: restart snmpd
 
-     - name: restart snmpd
+    - name: restart snmpd
       service: name=snmpd state=restarted

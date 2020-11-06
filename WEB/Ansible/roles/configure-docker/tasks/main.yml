@@ -1,7 +1,7 @@
 ---
     - name: Copy Docker Daemon Config File
       copy:
-        src: /etc/ansible/EXIAA3-SysAdmin-Animus/WEB/roles/configure-docker/files/docker.service
+        src: /etc/ansible/EXIAA3-SysAdmin-Animus/WEB/Ansible/roles/configure-docker/files/docker.service
         dest: /lib/systemd/system/docker.service
         owner: root
         group: root
