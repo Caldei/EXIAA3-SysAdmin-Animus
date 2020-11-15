@@ -1,8 +1,8 @@
 # EXIAA3-SysAdmin-AnimusExtendus
 
 Ce repo fait partie du projet Animus Extendus. Il contient :
-1. Les Playbooks et les Dockerfiles nécessaires au déploiement du Site Vitrine et de l’Intranet d’Animus sur un Serveur Linux avec des conteneurs Docker.
-2. Les Playbooks nécessaires au à l'installation de SNMP sur des Serveurs Linux (Debian).
+1. Les Playbooks Ansible et les Dockerfiles nécessaires au déploiement du Site Vitrine et de l’Intranet d’Animus sur un Serveur Linux avec des conteneurs Docker.
+2. Les Playbooks Ansible nécessaires au à l'installation de SNMP sur des Serveurs Linux (Debian).
 
 
 
