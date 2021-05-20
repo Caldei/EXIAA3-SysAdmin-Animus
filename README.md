@@ -1,39 +1,39 @@
-# EXIAA3-SysAdmin-AnimusExtendus
-
-Ce repo fait partie du projet Animus Extendus. Il contient :
-1. Les Playbooks Ansible et les Dockerfiles nécessaires au déploiement du Site Vitrine et de l’Intranet d’Animus sur un Serveur Linux avec des conteneurs Docker.
-2. Les Playbooks Ansible nécessaires au à l'installation de SNMP sur des Serveurs Linux (Debian).
-
+<h1 align="center">🛠️</br>Animus</h1>
+<p align="center">
+  EXIA Year 3 - Automation (Ansible, Dockerfile) - 4 Person Group Project - 2020
+</p>
 
 
-# 1. WEB : Déploiement du Site Vitrine et de l’Intranet
+---
+## Overview
+### Project goal 
+Automate the configuration of Debian-based Linux servers. Several servers needed to be configured for Snmp and to run Docker with two web servers on containers (one with Apache listening on port 80 and the other with Tomcat listening on port 8080).
 
-## 1.1 Prérequis
-* Préparer le Serveur de Déploiement Linux (testé avec Debian).
-* Installer Ansible sur un autre Serveur Linux (testé avec Debian).
-
-## 1.2 Installation et Utilisation des Playbook
-* Sur le Serveur Ansible se placer dans le dossier d'Ansible (```cd /etc/ansible```).
-* Ajouter ```[WEB]``` suivit de l'IP du Serveur de Déploiment dans le fichier ```hosts``` présent dans ce dossier.
-* Cloner ce repo dans le dossier (```git clone https://github.com/Caldei/EXIAA3-SysAdmin-Animus.git```).
-* Lancer le Playbook (```ansible-playbook EXIAA3-SysAdmin-Animus/WEB/Ansible/web.yml```).
-* Enjoy :)
+### Repo Content
+* **Snmp:** Ansible Playbook to install and configure SNMP.
+* **Webservers:** Ansible Playbook and Dockerfiles to install and configure Docker and the two containers with webservers (`Apache port 80`and `Tomcat port 8080`).
 
 
-## 1.3 Infos complémentaires
-* Site Vitrine : Apache - Port 80
-* Site Intranet : Nginx - Port 8080
+---
+## Get Started
+1. Add `[SNMP]`, `[WEB]` and the corresponding `Debian-based` hosts you want to configure in `/etc/ansible/hosts` on your Ansible server.
+2. If you have git, you can clone the repo with this command (or you can directly download it as Zip):
+    ```sh
+    git clone https://github.com/Caldei/EXIA-Automation-Animus.git
+    ```
+3. Launch the Snmp playbook:
+    ```sh
+    ansible-playbook ./EXIA-Automation-Animus/Snmp/snmp_playbook.yml
+    ```
+4. Launch the Webservers playbook:
+    ```sh
+    ansible-playbook ./EXIA-Automation-Animus/Webservers/webservers_playbook.yml
+    ```
+5. Visit the websites and use Snmp!
 
+---
+## Snmp Playbook Visual
+<p align="center">
+  <img src=https://i.ibb.co/rQ4W9Wz/Webservers-Playbook-Visual.png alt="Snmp Playbook Visual" width="600">
+</p>
 
-# 2. SNMP : Installation et configuration de SNMP
-
-## 1.1 Prérequis
-* Préparer les Serveurs Linux (Debian) où doit être installé SNMP.
-* Installer Ansible sur un autre Serveur Linux (testé avec Debian).
-
-## 1.2 Installation et Utilisation des Playbook
-* Sur le Serveur Ansible se placer dans le dossier d'Ansible (```cd /etc/ansible```).
-* Ajouter ```[SNMP]``` suivit de l'IP des les Serveurs Linux où doit être installé SNMP dans le fichier ```hosts``` présent dans ce dossier.
-* Cloner ce repo dans le dossier (```git clone https://github.com/Caldei/EXIAA3-SysAdmin-Animus.git```).
-* Lancer le Playbook (```ansible-playbook EXIAA3-SysAdmin-Animus/SNMP/Ansible/snmp.yml```).
-* Enjoy :)

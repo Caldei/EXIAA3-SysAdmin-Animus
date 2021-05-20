@@ -7,8 +7,8 @@
 
     - name: Copy Dockerfile
       copy:
-        src: /etc/ansible/EXIAA3-SysAdmin-Animus/WEB/Dockerfiles/{{ item }}/
-        dest: /root/{{ item }}/
+        src: "{{ item }}"
+        dest: /root/
         owner: root
         group: root
         mode: '0644'

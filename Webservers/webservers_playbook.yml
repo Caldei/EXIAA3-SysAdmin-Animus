@@ -2,9 +2,6 @@
     - name: Install Animus's web servers
       hosts: WEB
       remote_user: root
-      # remote_user: user
-      # become: yes
-      # become_method: sudo
     
       roles:
         - install-docker
